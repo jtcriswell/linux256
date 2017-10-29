@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Date modified: 10/29/2017 12:34PM -0400
+# Date modified: 10/29/2017 12:48PM -0400
 
 #
 # Get ID of the commit that the patch should be based on.
@@ -12,4 +12,4 @@
 commit_id=`git log -1 --pretty=format:"%H" --follow mkpatch.sh`
 
 # Generate the diff
-git diff $commid_id
+git diff $commit_id
