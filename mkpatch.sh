@@ -5,13 +5,11 @@
 #
 # Get ID of the commit that the patch should be based on.
 #
-# We hard-code the commit ID which we use to create the patch.  The reason we
-# do this is in case students copy mkpatch.sh to their working directories
-# without doing a "git pull" from the instructor's repository.
+# The following git-log command outputs ID of the latest commit that modifies
+# mkpatch.sh. Every time we'd like to include a commit onto the patch base,
+# please update the date above and include this file in the commit.
 #
-# This solution isn't very clean, but it should work.
-#
-commit_id="978080956b97b9c39b58f77ebf83ecc927cb70c2"
+commit_id=`git log -1 --pretty=format:"%H" --follow mkpatch.sh`
 
 # Generate the diff
 git diff $commit_id
